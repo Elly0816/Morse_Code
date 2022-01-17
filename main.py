@@ -77,7 +77,13 @@ class Morse:
 
 
 print('This is a text to morse converter')
-to_convert = input('Enter what you want to convert to morse code:\n')
+flag = True
+while flag:
+    to_convert = input('Enter what you want to convert to morse code:\n')
 
-morse = Morse(raw_string=to_convert)
-print(morse.encode())
+    morse = Morse(raw_string=to_convert)
+    print(morse.encode())
+
+    continue_ = input("Do you want to continue? (y/n):\n").lower()
+    if continue_ == 'n':
+        flag = False
